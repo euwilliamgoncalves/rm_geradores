@@ -53,3 +53,19 @@ contactContent.innerHTML += `<h1>Entre em contato!</h1>`;
 contactsList.map(contact => {
     contactContent.innerHTML += `<a href="${contact.href}" class="contact-button">${contact.icon}${contact.text}</a>`;
 });
+
+let openMenu = false;
+const button = document.querySelector('nav ul.button .icon');
+const dropdownMenu = document.querySelector('nav ul.menu');
+
+button.addEventListener("click", () => {
+  if (!openMenu) {
+    dropdownMenu.style.display = "grid";
+    button.style.backgroundImage = "url(https://image.flaticon.com/icons/svg/1828/1828947.svg)";
+    openMenu = true;
+  } else {
+    dropdownMenu.style.display = "none";
+    button.style.backgroundImage = "url(https://image.flaticon.com/icons/svg/1828/1828863.svg)";
+    openMenu = false;
+  }
+})

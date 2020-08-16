@@ -29,73 +29,92 @@ h1 {
 #top {
     min-height: 90vh;
     width: 100vw;
-    background: #ED1C2433;
+    background: url('../img/header.jpg') top center no-repeat;
+    background-size: cover;
 }
 
-#top nav {
-    height: 4rem;
+nav {
     width: 100vw;
+    background: #eee;
+    color: #555;
+    padding: 0 15px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--white);
-    padding: 0.5rem;
-    position: fixed;
 }
 
-#top nav .logo-img {
-    height: 100%;
+nav img {
+    height: 80%;
 }
-
-#top nav ul {
-    display: flex;
-    width: 17.5rem;
-    justify-content: flex-end;
-    height: 100%;
-}
-
-#top nav ul li {
+  
+  nav ul li {
     list-style: none;
-    height: 100%;
     display: flex;
 }
-
-#top nav ul li + li {
-    margin-left: 0.25rem;
-}
-
-#top nav ul li a {
-    font-size: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 0.5rem;
-    border-radius: 0.3rem;
-    background: var(--red);
+  
+  nav ul li a {
     text-decoration: none;
-    font-weight: 700;
-    color: var(--white);
-    transition: background 0.5s;
+    color: var(--black);
+    margin-left: auto;
 }
-
-#top nav ul li a:hover {
+  
+  nav ul li a:hover {
     color: var(--red);
-    background: var(--white);
+}
+  
+  nav ul.menu {
+    background: #ddd;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    right: 0px;
+    padding: 15px;
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+}
+  
+  nav ul.button {
+    display: flex;
+    padding: 1px;
+}
+  
+  nav ul.button .icon {
+    width: 32px;
+    height: 32px;
+    background: url("https://image.flaticon.com/icons/svg/1828/1828863.svg") no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+  
+  nav ul.button .icon:hover {
+    transform: scale(1.1);
+}
+  
+  @media(min-width: 700px) {
+    nav ul.menu {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      background: none;
+      position: relative;
+      top: 0px;
+      padding: 0;
+      padding-right: 20px;
+      gap: 20px;
+    }
+    nav ul.button {
+      display: none;
+    }
 }
 
 #top .header-title {
-    margin-top: 4rem;
-    width: 100%;
+    font-size: 80%;
+    margin-top: 50vh;
     padding: 2.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-#top .header-image {
-    background: url('../img/header.png') top no-repeat;
-    background-size: contain;
-    min-height: 20rem;
+    background: var(--white);
 }
 
 #top .header-title h1 {
@@ -234,41 +253,13 @@ footer a {
 }
 
 @media(min-width: 700px) {
-    #top nav {
-        height: 5rem;
-    }
-
-    #top nav .logo-img {
-        height: 80%;
-        margin-left: 1rem;
-    }
-
-    #top nav ul {
-        width: 20rem;
-        margin-right: 1rem;
-    }
-
-    #top nav ul li a {
-        padding: 0 1rem;
-        font-size: 100%;
-    }
+    
 
     #top .header-title {
-        padding: 0 3rem;
-        margin-top: 8rem;
+        max-width: 400px;
+        padding: 3rem;
+        margin: 8rem 4rem;
         font-size: 110%;
-        flex-direction: row;
-        height: 90vh;
-    }
-
-    #top .header-title span {
-        max-width: 280px;
-    }
-
-    #top .header-title .header-image {
-        flex: 1;
-        background-size: 100%;
-        background-attachment: local;
     }
 
     #services {
